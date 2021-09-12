@@ -1,9 +1,12 @@
 import sys
 import shodan
 from termcolor import colored
+import requests
+import json
 
 # Insert your own API keys here:
 SHODAN_API_KEY = "YOUR_API_KEY"
+ABUSEIPDB_API_KEY = "YOUR_API_KEY"
 
 # Shodan IP check
 def shodan_check(ip):
@@ -33,6 +36,44 @@ Port: {}
 Banner: {}
         """, "red").format(item["port"], item["data"]))
 
+# AbuseIPDB check
+def abuseipdb_check(ip):
+    
+    # Define API endpoint
+    url = "https://api.abuseipdb.com/api/v2/check"
+
+    # Define API parameters
+    querystring = {
+        "ipAddress": ip
+        # "verbose": true
+    }
+
+    # Define headers
+    headers = {
+        "Accept": "application/json",
+        "Key": ABUSEIPDB_API_KEY
+    }
+
+    # Make the request
+    response = requests.request("GET", url=url, headers=headers, params=querystring)
+    response = json.loads(response.text)
+    data = response["data"]
+
+    # Print data from query
+    print(colored("""
+    _   _                 ___ ___ ___  ___ 
+   /_\ | |__ _  _ ___ ___|_ _| _ \   \| _ )
+  / _ \| '_ \ || (_-</ -_)| ||  _/ |) | _ )
+ /_/ \_\_.__/\_,_/__/\___|___|_| |___/|___/
+                                                                                 
+
+IP: {}
+Abuse Score: {}
+Usage Type: {}
+ISP: {}
+Domain: {}
+Number of Reports: {}
+    """, "green").format(data["ipAddress"], data["abuseConfidenceScore"], data["usageType"], data["isp"], data["domain"], data["totalReports"]))
 
 # Check input is in the correct format
 if len(sys.argv) != 2:
@@ -41,4 +82,7 @@ if len(sys.argv) != 2:
 
 if SHODAN_API_KEY != "YOUR_API_KEY" and SHODAN_API_KEY != "":
     shodan_check(sys.argv[1])
+
+if ABUSEIPDB_API_KEY != "YOUR_API_KEY" and ABUSEIPDB_API_KEY != "":
+    abuseipdb_check(sys.argv[1])
 
