@@ -9,6 +9,13 @@ A simple python script to check the reputation of an IP address against multiple
 
 ---
 
+## Requirements
+* shodan
+* termcolor
+* requests
+
+---
+
 ## Installation
 1. Clone this repository with the command `git clone https://github.com/d4rkflam1ngo/ip-reputation-checker && cd ip-reputation-checker`
 2. Install the requirements for the script by running `pip install -r requirements.txt`
