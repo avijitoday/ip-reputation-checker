@@ -108,8 +108,6 @@ Latest Reports:
     Suspicious: {}
     Undetected: {}
     Timeout: {}
-
-
     """, "blue").format(data["id"], data["attributes"]["country"], data["attributes"]["last_analysis_stats"]["harmless"], data["attributes"]["last_analysis_stats"]["malicious"], data["attributes"]["last_analysis_stats"]["suspicious"], data["attributes"]["last_analysis_stats"]["undetected"], data["attributes"]["last_analysis_stats"]["timeout"]))
 
 # Check input is in the correct format
