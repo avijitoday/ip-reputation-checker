@@ -31,3 +31,8 @@ python3 reputation.py <IP>
 | Command | Description |
 | ----------- | ----------- |
 | `python3 reputation.py 142.250.179.238`| Check the reputation of the IP "142.250.179.238" |
+
+### Requested Features
+[ ] Environment vars (API Keys)
+[ ] Web Interface
+[ ] More OSINT Tools
