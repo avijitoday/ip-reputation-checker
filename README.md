@@ -2,7 +2,7 @@
 
 A simple python script to check the reputation of an IP address against multiple OSINT tools.
 
-### Currently supported OSINT tools: 
+### Currently Supported OSINT Tools: 
 * [Shodan](https://www.shodan.io/)
 * [AbuseIPDB](https://www.abuseipdb.com/)
 * [VirusTotal](https://www.virustotal.com/)
