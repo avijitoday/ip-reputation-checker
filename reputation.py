@@ -6,8 +6,8 @@ import json
 
 # Insert your own API keys here:
 SHODAN_API_KEY = "YOUR_API_KEY"
-ABUSEIPDB_API_KEY = "YOUR_API_KEY"
-VIRUSTOTAL_API_KEY = "YOUR_API_KEY"
+ABUSEIPDB_API_KEY = "cdbeefed4c810de9ac824f5fea8e977ebde89e31b6440e6a053d344aeb7f3730459d64a035655449"
+VIRUSTOTAL_API_KEY = "75e70b7b74777337dbff978f9eee157c8321c0d30f66c26351029bc83d5e8ed6"
 
 # Shodan IP check
 def shodan_check(ip):
@@ -42,6 +42,8 @@ def abuseipdb_check(ip):
     
     # Define API endpoint
     url = "https://api.abuseipdb.com/api/v2/check"
+    
+    #https://www.abuseipdb.com/check/[IP]/json?key=[API_KEY]&days=[DAYS]  <New Spec >
 
     # Define API parameters
     querystring = {
