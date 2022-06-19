@@ -5,7 +5,7 @@ import requests
 import json
 
 # Insert your own API keys here:
-SHODAN_API_KEY = "YOUR_API_KEY"
+SHODAN_API_KEY = "k84h0uT2U4t34bGywgypiqS9yi5Un4LJ"
 ABUSEIPDB_API_KEY = "cdbeefed4c810de9ac824f5fea8e977ebde89e31b6440e6a053d344aeb7f3730459d64a035655449"
 VIRUSTOTAL_API_KEY = "75e70b7b74777337dbff978f9eee157c8321c0d30f66c26351029bc83d5e8ed6"
 
@@ -117,8 +117,8 @@ if len(sys.argv) != 2:
     print("Usage: %s <IP>" % sys.argv[0])
     sys.exit(1)
 
-if SHODAN_API_KEY != "YOUR_API_KEY" and SHODAN_API_KEY != "":
-    shodan_check(sys.argv[1])
+#if SHODAN_API_KEY != "YOUR_API_KEY" and SHODAN_API_KEY != "":
+#    shodan_check(sys.argv[1])
 
 if ABUSEIPDB_API_KEY != "YOUR_API_KEY" and ABUSEIPDB_API_KEY != "":
     abuseipdb_check(sys.argv[1])
